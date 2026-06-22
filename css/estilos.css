@@ -1,0 +1,559 @@
+:root {
+    --brand-blue: #91b1df;
+    --brand-yellow: #fdeba6;
+    --dark-bg: #0b0b0b;
+    --card-bg: #161616;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+.navbar-custom {
+    background-color: rgba(11, 11, 11, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid var(--brand-blue);
+    padding: 12px 0;
+}
+
+.navbar-custom .nav-link {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--brand-blue) !important;
+}
+
+.btn-navbar {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--brand-blue);
+    color: #0b0b0b !important;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-navbar:hover {
+    background-color: var(--brand-yellow);
+    transform: translateY(-2px);
+}
+
+/* --- SECCIONES Y TARJETAS --- */
+.section-title h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #0b0b0b;
+    border-left: 5px solid var(--brand-blue);
+    padding-left: 15px;
+}
+
+.about-card {
+    background: #ffffff;
+    border: 1px solid rgba(145, 177, 223, 0.3);
+    border-top: 3px solid var(--brand-yellow, #fdeba6);
+    padding: 25px;
+    border-radius: 6px;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.about-card h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: #0b0b0b;
+}
+
+.about-card p {
+    font-family: 'PT Sans', sans-serif;
+    color: #555;
+}
+
+/* --- CONTENEDOR DE LA TARJETA DEL EQUIPO --- */
+.team-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    background: #fff;
+    width: 100%;
+}
+
+/* --- CONTROL RESPONSIVO DE LA IMAGEN (EVITA DESBORDE) --- */
+.team-img {
+    width: 100%;
+    height: 100%;
+    /* Ajusta la proporción de la foto para que todas se vean uniformes */
+    aspect-ratio: 3 / 4; 
+    /* Corta la imagen proporcionalmente sin deformarla ni estirarla */
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- CAPA OVERLAY SOBRE LA IMAGEN --- */
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 11, 11, 0.75); /* Fondo oscuro semitransparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar texto al pasar el mouse */
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+
+.team-overlay h5 {
+    color: var(--brand-blue); /* Tu azul de marca #91b1df */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.team-phrase {
+    color: #fdeba6; /* Tu amarillo de marca #fdeba6 */
+    font-family: 'PT Sans', sans-serif;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* 1. Contenedor general de la prenda */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow;
+}
+
+/* 2. Contenedor de la foto con posicionamiento absoluto para el hover */
+.product-image-placeholder {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    aspect-ratio: 3 / 4; /* Recomendado para mantener uniformidad en e-commerce */
+}
+
+/* 3. Comportamiento base de las imágenes de ropa */
+.product-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+/* LÓGICA DE INTERCAMBIO HOVER */
+.product-image-placeholder .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Oculta por defecto */
+}
+
+.product-card:hover .product-image-placeholder .img-primary {
+    opacity: 0; /* Se desvanece la primera */
+}
+
+.product-card:hover .product-image-placeholder .img-hover {
+    opacity: 1; /* Aparece la segunda con suavidad */
+    transform: scale(1.06); /* Mantiene tu zoom original */
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); 
+}
+
+/* Asegura transiciones fluidas de salida al retirar el cursor */
+.product-image-placeholder .img-primary,
+.product-image-placeholder .img-hover {
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+/* 4. Bloque de texto debajo de la foto */
+.product-info {
+    padding: 20px 15px;
+    background: #ffffff;
+    border-top: 3px solid var(--brand-yellow, #ffd43b); 
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #111111;
+}
+
+.btn-add-cart {
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#cart-floating-button {
+    position: fixed;
+    bottom: 25px; 
+    left: 25px;  
+    background-color: #000000; 
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 9999; 
+    width: 60px;   
+    height: 60px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#cart-floating-button:hover {
+    transform: scale(1.12);
+    background-color: #1a1a1a;
+}
+
+/* ==========================================================================
+   CARRUSEL PREMIUM DE GRAN FORMATO (HERO SLIDER)
+   ========================================================================== */
+#sliderPrincipal {
+    position: relative;
+    width: 100%;
+}
+
+/* Control estricto de la altura de la imagen */
+.img-slider {
+    width: 100%;
+    height: 75vh;             
+    object-fit: cover;       
+    object-position: center;  
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+    z-index: 1;
+}
+
+/* Contenedor flotante del texto */
+.text-slider-bg {
+    z-index: 2;
+    bottom: 12%;               
+    padding: 20px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); 
+}
+
+/* Estilos de los Títulos Principales */
+.text-slider-bg h5 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;         
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* Estilos de los subtítulos */
+.text-slider-bg p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3rem;
+    color: #fdeba6;            
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   BANNER INTERMEDIO DE TRANSICIÓN
+   ========================================================================== */
+.middle-brand-banner {
+    position: relative;
+    width: 100%;
+    min-height: 300px; 
+    background: url('../img/banner1.jpg') no-repeat center center; 
+    background-size: cover;
+    background-attachment: scroll; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.middle-brand-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); 
+    z-index: 1;
+}
+
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: #ffffff;
+}
+
+.banner-subtitle {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fdeba6; 
+    display: block;
+    margin-bottom: 10px;
+}
+
+.banner-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.banner-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN PARA PANTALLAS MÓVILES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .middle-brand-banner {
+        min-height: 250px;
+        padding: 40px 15px;
+    }
+    .banner-title {
+        font-size: 1.6rem; 
+    }
+    .banner-text {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA EXCLUSIVA PARA DISPOSITIVOS MÓVILES
+   ========================================================================== */
+@media (max-width: 576px) {
+    #cart-floating-button {
+        bottom: 95px;
+        right: 15px;
+    }
+    .whatsapp-floating-btn {
+        bottom: 20px;
+        right: 15px;
+    }
+}
+
+/* ==========================================================================
+   FOOTER PREMIUM - ESTILO SHOPIFY (REESTRUCTURADO)
+   ========================================================================== */
+.footer-shopify-style {
+    background-color: var(--dark-bg) !important;
+    color: #ffffff !important;
+    padding-top: 60px;
+    padding-bottom: 25px;
+    margin-top: 50px;
+}
+
+.footer-shopify-style .footer-heading, 
+.footer-shopify-style .brand-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+}
+
+.footer-shopify-style .brand-title {
+    color: var(--brand-blue);
+}
+
+.footer-shopify-style .brand-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85); 
+}
+
+.footer-shopify-style .footer-contact-phone a,
+.footer-shopify-style .copyright-text {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/* --- ICONOS SOCIALES --- */
+.footer-shopify-style .footer-social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 18px;
+}
+
+.footer-shopify-style .footer-social-icons a {
+    color: #ffffff;
+    font-size: 1.3rem; 
+    transition: color 0.3s ease;
+}
+
+.footer-shopify-style .footer-social-icons a:hover {
+    color: var(--brand-yellow);
+}
+
+/* --- TELÉFONO / WHATSAPP FOOTER --- */
+.footer-shopify-style .footer-contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-shopify-style .footer-contact-phone i {
+    font-size: 1.4rem;
+    color: var(--brand-blue);
+}
+
+.footer-shopify-style .footer-contact-phone a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.footer-shopify-style .footer-contact-phone a:hover {
+    color: var(--brand-blue);
+}
+
+.footer-shopify-style .footer-divider {
+    border-color: rgba(255, 255, 255, 0.12);
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.footer-shopify-style .copyright-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0;
+}
+/* ==========================================================================
+   GLOBO FLOTANTE DE CONTACTO DIRECTO WHATSAPP (REVISIÓN DE ALINEACIÓN)
+   ========================================================================== */
+.whatsapp-floating-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px; 
+    right: 25px; /* Se queda en el lado derecho */
+    background-color: #25d366;
+    color: #fff !important;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    z-index: 9998; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-btn 2s infinite;
+}
+
+@media (max-width: 576px) {
+    #cart-floating-button {
+        bottom: 25px;
+        left: 15px;
+    }
+    .whatsapp-floating-btn {
+        bottom: 25px;
+        right: 15px;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN NUESTRA HISTORIA
+   ========================================================================== */
+.about-story-box {
+    padding: 30px 20px;
+    background-color: #fcfcfc; 
+    border-radius: 12px;
+    border-left: 4px solid var(--brand-blue); 
+}
+
+.story-subtitle {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-blue); 
+    display: block;
+    margin-bottom: 8px;
+}
+
+.story-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+.story-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .about-story-box {
+        padding: 20px 15px;
+        margin-top: 20px;
+    }
+    .story-title {
+        font-size: 1.5rem;
+    }
+    .story-text {
+        font-size: 1rem;
+    }
+}
