@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Fuente base para párrafos y textos generales */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+body {
+    background-color: #f3f0f7;
+    color: #333;
+}
+
+/* NAVBAR CORREGIDA Y ALINEADA */
+.navbar-header {
+    display: flex;
+    justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+    align-items: center; /* Alinea verticalmente al centro el logo y los textos */
+    padding: 15px 4%;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.navbar-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-header .logo-img {
+    height: 50px; /* Tamaño controlado del logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Contenedor de los enlaces del menú */
+.navbar-nav-container {
+    display: flex;
+    gap: 25px; /* Separación perfecta entre cada botón */
+    align-items: center;
+}
+
+/* Estilo final de los enlaces: Azul y sin líneas */
+.nav-link {
+    color: #30a5f9 !important; 
+    text-decoration: none !important; /* Quita las líneas de abajo */
+    font-family: 'Comfortaa', sans-serif !important; 
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1c7ec7 !important; 
+    text-decoration: none !important;
+}
+
+/* CAROUSEL (ZONA DE LOS 3 PUNTOS) */
+.carousel-section {
+    background-color: #eae6f0;
+    padding: 60px 20px 20px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: auto;
+    background-color: #dedede;
+    border-radius: 0px; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.arrow {
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    user-select: none;
+}
+.carousel-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #444;
+}
+
+.nosotros-section {
+    background: linear-gradient(to bottom, #1d438a, #3b82c4);
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    gap: 20px;
+    position: relative;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 25px;
+    min-height: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.nosotros-title-center h2 {
+    font-size: 55px;
+    line-height: 0.9;
+    font-weight: 900;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.integrantes-section {
+    background: linear-gradient(to bottom, #3b82c4, #1b478a);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.integrantes-section h2 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.integrantes-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.integrantes-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px; 
+}
+
+.avatar-bg {
+    width: 140px;  
+    height: 140px; 
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; 
+}
+.member:hover .avatar-bg {
+    transform: scale(1.05);
+}
+
+.avatar-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.member p {
+    font-size: 13px; 
+    opacity: 0.8;
+}
+
+/* PRODUCTOS */
+.productos-section {
+    background: linear-gradient(to bottom, #1b478a, #c8b9d6);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.productos-section h2 {
+    color: #ffffff;
+    font-size: 37px;
+    margin-bottom: 20px;
+}
+
+.productos-desc {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.prod-card {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.prod-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prod-card.square {
+    aspect-ratio: 1 / 1;
+}
+
+.prod-card.tall {
+    grid-row: span 2;
+    height: 350px;
+}
+
+/* CONTACTO Y FORMULARIO */
+.contacto-section {
+    background: linear-gradient(to bottom, #f3ac3c, #cb751b);
+    padding: 60px 20px;
+}
+
+.contacto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.contacto-info {
+    background-color: #2c7cb8;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.contacto-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contacto-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.info-detalles p {
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+/* El Formulario Blanco de la Derecha */
+.contacto-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.contacto-form input, 
+.contacto-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.contacto-form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.contacto-form button {
+    background-color: #2c7cb8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1b478a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}

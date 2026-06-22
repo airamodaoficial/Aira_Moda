@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yutori krea</title>
+    <!-- Primero tus estilos personalizados, luego Bootstrap -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- NAVBAR CORREGIDA Y ESTRUCTURADA -->
+    <header class="navbar-header">
+        <div class="logo">
+            <a href="#"><img src="img/icono.png" alt="Yutori Krea" class="logo-img"></a>
+        </div>
+        <!-- Se agregaron las clases adecuadas a las etiquetas 'a' -->
+        <nav class="navbar-nav-container">
+           <a class="nav-link" href="#nosotros">Nosotros</a>
+           <a class="nav-link" href="#integrantes">Integrantes</a>
+           <a class="nav-link" href="#productos">Productos</a>
+           <a class="nav-link nav-link-back" href="../../index.html">Aira moda</a>
+        </nav>
+    </header>
+
+    <!-- CARRUSEL / SLIDER (Con autoplay activado) -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/banner1.jpg" class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/banner2.jpg" class="d-block w-100" alt="Banner 2">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/banner3.jpg" class="d-block w-100" alt="Banner 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- SECCIÓN: NOSOTROS -->
+    <section id="nosotros" class="nosotros-section">
+        <div class="nosotros-grid">
+            <div class="card card-mision">
+                <h3>Misión</h3>
+                <p>Impulsar el crecimiento de las marcas mediante soluciones de diseño gráfico y publicitario creativo, innovador y estratégico, transformando ideas en experiencias visuales impresas y digitales que fortalecen su identidad y presencia en el mercado contando su historia, por eso Yutori Krea acompaña cada proyecto, sin importar el tamaño que tenga.</p>
+            </div>
+
+            <div class="nosotros-title-center">
+                <h2>NO<br>SO<br>TR<br>OS</h2>
+            </div>
+
+            <div class="card card-vision">
+                <h3>Visión</h3>
+                <p>En diez años, Yutori Krea será reconocida como una firma de diseño gráfico y publicitario referente a nivel nacional por su capacidad de transformar ideas en experiencias visuales auténticas, emocionalmente significativas, profesionales y duraderas basadas en la confianza y la empatía posicionando a Yutori Krea como un puente entre la esencia de cada marca y su impacto en el mundo digital e impreso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: INTEGRANTES -->
+    <section id="integrantes" class="integrantes-section">
+        <h2>INTEGRANTES</h2>
+        <div class="integrantes-container">
+            <div class="integrantes-row top-row">
+                <div class="member">
+                    <div class="avatar-bg"><img src="img/natalia.jpg" alt="Natalia"></div>
+                    <h4>Natalia Vargas</h4>
+                    <p>Diseñadora multimedia</p>
+                </div>
+                <div class="member">
+                    <div class="avatar-bg"><img src="img/carolina.jpg" alt="Carolina"></div>
+                    <h4>Carolina Mata</h4>
+                    <p>Diseñadora de empaque</p>
+                </div>
+                <div class="member">
+                    <div class="avatar-bg"><img src="img/helen.jpg" alt="Helen"></div>
+                    <h4>Helen Carranza</h4>
+                    <p>Diseñadora Editorial</p>
+                </div>
+            </div>
+            <div class="integrantes-row bottom-row">
+                <div class="member">
+                    <div class="avatar-bg"><img src="img/tatiana.jpg" alt="Lina"></div>
+                    <h4>Lina León</h4>
+                    <p>Diseñadora web</p>
+                </div>
+                <div class="member">
+                    <div class="avatar-bg"><img src="img/gaby.jpg" alt="Gaby"></div>
+                    <h4>Gaby Rincón</h4>
+                    <p>Diseñadora de marca</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PRODUCTOS -->
+    <section id="productos" class="productos-section">
+        <h2>PRODUCTOS</h2>
+        <p class="productos-desc">Los productos visuales presentados aquí son el resultado de un proceso de investigación y desarrollo estratégico, diseñados para generar un impacto de comunicación directa y emocional con nuestro público para que nos reconozcan como agencia de soluciones creativas. En estos mock ups se ve como se lleva a la vida real la esencia de la marca.</p>
+        
+        <div class="productos-grid">
+            <div class="prod-card square"><img src="img/libreta.jpg" alt="Producto 1"></div>
+            <div class="prod-card square"><img src="img/membrete.jpg" alt="Producto 2"></div>
+            <div class="prod-card square"><img src="img/valla.jpg" alt="Producto 3"></div>
+            <div class="prod-card square"><img src="img/bolsoyutori.jpg" alt="Producto 4"></div>
+            <div class="prod-card square"><img src="img/carnet.jpg" alt="Producto 5"></div>
+            <div class="prod-card square"><img src="img/anuncio.jpg" alt="Producto 6"></div>
+            <div class="prod-card tall"><img src="img/tarjetas.jpg" alt="Producto 7"></div>
+            <div class="prod-card tall"><img src="img/computador.jpg" alt="Producto 8"></div>
+            <div class="prod-card tall"><img src="img/pocillo.jpg" alt="Producto 9"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CONTACTO -->
+    <section id="contacto" class="contacto-section">
+        <div class="contacto-wrapper">
+            <div class="contacto-info">
+                <h3>Contáctanos</h3>
+                <p>Si te gustó nuestro trabajo puedes contactarnos a través de todos nuestros contactos y si quieres información exclusiva con promociones únicas puedes escribirnos a través de tú correo.</p>
+                <div class="info-detalles">
+                    <p><strong>Teléfonos:</strong> +57 320 468 7690</p>
+                    <p><strong>Correo electrónico:</strong> yutorikrea@gmail.com</p>
+                    <p><strong>Instagram:</strong> @yutori_krea</p>
+                    <p><strong>Ubicación:</strong> Bogotá, Colombia</p>
+                </div>
+            </div>
+            
+            <div class="contacto-form">
+                <form>
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre">
+                    <label>Apellido</label>
+                    <input type="text" placeholder="Tu apellido">
+                    <label>Correo</label>
+                    <input type="email" placeholder="Tu correo">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Tu mensaje"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2026 Yutorikrea_solucionescreativas</p>
+    </footer>
+
+</body>
+</html>
