@@ -233,11 +233,40 @@ body {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    appearance: none;
 }
 
 #cart-floating-button:hover {
     transform: scale(1.12);
     background-color: #1a1a1a;
+}
+
+.cart-items-list {
+    min-height: 130px;
+}
+
+.cart-item-row {
+    padding: 12px 14px;
+    background: #fafafa;
+    border-radius: 10px;
+}
+
+.btn-remove-item {
+    min-width: 42px;
+}
+
+.offcanvas-body {
+    min-height: 320px;
+}
+
+.cart-summary p {
+    font-size: 0.95rem;
+}
+
+.offcanvas-title {
+    font-weight: 700;
 }
 
 /* ==========================================================================
